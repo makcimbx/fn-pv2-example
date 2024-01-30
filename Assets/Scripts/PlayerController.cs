@@ -29,7 +29,7 @@ namespace Game.Views.GamePlay
                 {
                     var vector = hit.point - transform.position;
                     var normalizedVector = vector.normalized;
-                    ForceInDirection(normalizedVector * 5f);
+                    ForceInDirection(normalizedVector * 10f);
                 }
             }
         }

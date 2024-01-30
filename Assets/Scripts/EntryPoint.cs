@@ -7,6 +7,7 @@ using UnityEngine;
 using Cysharp.Threading.Tasks;
 using FishNet.Transporting;
 using ParrelSync;
+using FishNet.Object;
 
 namespace Game.Views.GamePlay
 {
