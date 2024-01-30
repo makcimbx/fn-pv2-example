@@ -380,9 +380,9 @@ MonoBehaviour:
   Transport: {fileID: 760173461}
   _intermediateLayer: {fileID: 0}
   _latencySimulator:
-    _enabled: 0
+    _enabled: 1
     _simulateHost: 1
-    _latency: 0
+    _latency: 100
     _outOfOrder: 0
     _packetLoss: 0
 --- !u!114 &760173463
