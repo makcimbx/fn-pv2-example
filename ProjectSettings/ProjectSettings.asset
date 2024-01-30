@@ -735,7 +735,7 @@ PlayerSettings:
   webGLMemoryGeometricGrowthCap: 96
   webGLPowerPreference: 2
   scriptingDefineSymbols:
-    Standalone: FISHNET;FISHNET_V4;PREDICTION_V2
+    Standalone: FISHNET;FISHNET_V4;PREDICTION_V2;FISHNET_DISABLE_V3TOV4_HELPERS
   additionalCompilerArguments: {}
   platformArchitecture: {}
   scriptingBackend: {}
