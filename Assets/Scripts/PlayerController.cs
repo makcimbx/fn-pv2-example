@@ -1,18 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
+using FishNet.Object;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+namespace Game.Views.GamePlay
 {
-    // Start is called before the first frame update
-    void Start()
+    [RequireComponent(typeof(RigidbodySync))]
+    public class PlayerController : NetworkBehaviour
     {
-        
-    }
+        private RigidbodySync rigidbodySync;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        private RigidbodySync RigidbodySync => rigidbodySync ??= GetComponent<RigidbodySync>();
+
+        public void ForceInDirection(Vector3 direction)
+        {
+            if (!IsOwner) return;
+
+            RigidbodySync.ForceInDirection(direction, ForceMode.Impulse);
+        }
     }
 }
