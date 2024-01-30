@@ -6,12 +6,12 @@ using FishNet.Transporting.Tugboat;
 using UnityEngine;
 using Cysharp.Threading.Tasks;
 using FishNet.Transporting;
+using ParrelSync;
 
 namespace Game.Views.GamePlay
 {
     public class EntryPoint : MonoBehaviour
     {
-        [SerializeField] private PlayerSpawner playerSpawner;
         [SerializeField] private NetworkManager networkManager;
 
         private Tugboat tugboat;
@@ -20,13 +20,9 @@ namespace Game.Views.GamePlay
         {
             tugboat = networkManager.TransportManager.GetTransport<Tugboat>();
 
-            try
+            if (!ClonesManager.IsClone())
             {
                 await StartServer();
-            }
-            catch
-            {
-
             }
 
             await StartClient();
