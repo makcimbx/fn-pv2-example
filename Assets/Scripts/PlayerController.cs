@@ -18,5 +18,20 @@ namespace Game.Views.GamePlay
 
             RigidbodySync.ForceInDirection(direction, ForceMode.Impulse);
         }
+
+        private void Update()
+        {
+            if (Input.GetMouseButtonDown(0))
+            {
+                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                RaycastHit hit;
+                if (Physics.Raycast(ray, out hit, 100))
+                {
+                    var vector = hit.point - transform.position;
+                    var normalizedVector = vector.normalized;
+                    ForceInDirection(normalizedVector * 5f);
+                }
+            }
+        }
     }
 }
